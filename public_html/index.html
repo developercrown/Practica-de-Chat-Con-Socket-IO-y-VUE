@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MyChatProject</title>
+    <link rel="stylesheet" href="./style.css"/>
+    <link rel="stylesheet" href="./alertifyjs/css/alertify.min.css"/>
+</head>
+<body>
+    <div id="app">
+
+        <div id="user-modal" class="user-modal" style="display: block;">
+            <input type="text" @keyup.enter="saveUser" v-model="myUser" placeholder="Ingresa tu usuario aqui y presiona enter">
+        </div>
+
+        <div class="main">
+            <ul id="txt-area">
+                <li v-for="(message) in messages" :class="{owner: message.userName == myUser}">
+                    <b>{{onlineUsers[message.userId]}}</b>
+                    {{message.text}}
+                    <i id="time" class="time">{{message.time}}</i>
+                </li>
+            </ul>
+            <ul id="onlines">
+                <li v-for="(user, i) in onlineUsers">
+                <a :href="'#'+i">
+                    {{user}}
+                </a></li>
+            </ul>
+        </div>
+        <textarea placeholder="Ingresa tu mensaje aqui" id="txt" rows="5" v-model="text" v-on:keyup.enter="send"></textarea>
+    </div>
+
+
+    <script src="./vue.min.js"></script>
+    <script src="./alertifyjs/alertify.min.js"></script>
+    <script src="http://192.168.2.12:9090/socket.io/socket.io.js"></script>
+    <script src="./chatroom.js"></script>
+</body>
+</html>

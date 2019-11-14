@@ -1,0 +1,89 @@
+body{
+    background: #444;
+    color: #eee;
+    padding: 0;
+    margin: 0;
+}
+
+#txt {
+    width: 98%;
+    height: 10vh;
+}
+
+#main {
+    width: 100%;
+}
+
+#txt-area {
+    background: red;
+    display: inline-block;
+    width: 75%;
+    height: 80vh;
+    padding: 0;
+    background: #101010;
+    vertical-align: top;
+    padding: 1%;
+}
+
+#txt-area li {
+    float: left;
+    clear: both;
+    padding: 5px;
+    list-style: none;
+    background: steelblue;
+    margin-bottom: 14px;
+    border-radius: 80px;
+    min-width: 40%;
+}
+
+#txt-area li.owner{
+    float: right;
+    background: yellowgreen;
+    color: #000;
+}
+
+#txt-area li i.time {
+    display: block;
+    font-size: 12px;
+}
+
+#onlines {
+    background: #333;
+    display: inline-block;
+    width: 22%;
+    height: 80vh;
+    padding: 0;
+    list-style: none;
+    vertical-align: top;
+}
+
+#onlines li{
+    padding: 2px;
+}
+
+#onlines a, #onlines a:visited {
+    color: #aaa;
+    padding: 5px;
+    border: 1px solid black;
+    margin-bottom: 4px;
+    display: block;
+    background: darkslategrey;
+    text-decoration: none;
+}
+
+.user-modal {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 99;
+    text-align: center;
+    padding-top: 20vh;
+    background: rgba(0,0,0,.75);
+}
+
+.user-modal input {
+    width: 75%;
+    font-size: 35px;
+}
